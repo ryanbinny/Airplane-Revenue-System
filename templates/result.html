@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Revenue result</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    </head>
+    <body>
+        <div class="header-box">Revenue Breakdown</div>
+        <table>
+            <tr><th>Aircraft</th><td>{{aircraft}}</td></tr>                   <!--tr=table row,th=table header,td=table data-->
+            <tr><th>Distance</th><td>{{distance}}</td></tr>
+            <tr><th>Economy Passengers</th><td>{{economy}}</td></tr>
+            <tr><th>Business Passengers</th><td>{{business}}</td></tr>
+            <tr><th>First class Passengers</th><td>{{first_class}}</td></tr>
+            <tr><th>Surcharge applied</th><td>{{'Yes' if surcharge_applied else 'No'}}</td></tr>     <!--checks for the condition ie if it is true or not-->
+            <tr><th>Discount</th><td>₹{{discount | round(2)}}</td></tr>
+            <tr><th>Bonus</th><td>₹{{bonus}}</td></tr>
+            <tr><th><strong>Total revenue</strong></th><td><strong>{{final_revenue | round(2)}}</strong></td></tr>   <!--strong means important or bold-->
+        </table>
+        <br>
+        <a href="/">←Back to home</a>
+    </body>
+</html>

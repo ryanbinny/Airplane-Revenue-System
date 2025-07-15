@@ -1,0 +1,38 @@
+<!doctype html>   <!--explicitly defining that we are using html5 and not any other versions-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">       <!--tells the browser to use UTF-8 character encoding for html-->
+        <title>Airplane Revenue System</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">    <!--static refers to the static content in our webpage like the images, the fonts etc.-->   
+    </head>
+    <body>
+        <div class="header-box">Airplane Revenue Calculator</div>
+
+        {% if error %}
+        <p class="error">{{error}}</p>
+        {% endif %}
+
+        <form action = '/result' method ='post'>               <!--sends the results to the result page by using the post protocol-->
+            <label>Economy passengers:</label>
+            <input type="number" name="economy" min="0" required><br>
+
+            <label>Business passengers:</label>
+            <input type="number" name="business" min="0" required><br>
+
+            <label>First class passengers:</label>
+            <input type="number" name="first_class" min="0" required><br>
+
+            <label>Distance Flown (km):</label>
+            <input type="number" name="distance" min="1" required><br>    <!--takes in each value from the user-->
+
+            <label>Aircraft type:</label>
+            <select name="aircraft">
+                <option value="A320">A320</option>
+                <option value="B737">B737</option>
+                <option value="A380">A380</option>
+            </select><br>
+            <button type="submit">Calculate Revenue!</button>
+        </form>
+
+    </body>
+</html>
