@@ -30,7 +30,7 @@ AirplaneRevenueSystem/
 │ └── result.html
 ├── static/
 │ └── style.css
-├── screens/ # Place your screenshots here
+├── screens/ 
 ├── README.md
 ├── requirements.txt
 
